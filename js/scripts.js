@@ -25,13 +25,13 @@ $(document).ready(function() {
     var number2 = parseInt($("#input2").val());
     var operator = $("input:radio[name=operator]:checked").val();
     var result;
-    if (operator === "add") {
+    if (operator === "Trapical") {
       result = add(number1, number2);
-    } else if (operator === "subtract") {
+    } else if (operator === "Desert") {
       result = subtract(number1, number2);
     } else if (operator === "multiply") {
       result = multiply(number1, number2);
-    } else if (operator === "divide") {
+    } else if (operator === "Asia") {
       result = divide(number1, number2);
     }
     $("#output").text(result);
