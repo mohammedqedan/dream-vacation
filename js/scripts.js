@@ -68,5 +68,6 @@ $(document).ready(function() {
       console.log(vacation);
     vacation = budgetFun(budget);
     console.log(vacation);
+    $("#output").text(vacation);
   });
 });
