@@ -1,39 +1,72 @@
 
 // Business (or back-end) logic:
+var weatherFun =function(weather){
+  if (weather == 1)
+    return "Dubai"
+  else if (weather == 2)
+    return "Mexico"
+  else if (weather == 3)
+    return "Montana"
+  else
+    return "Japan"
+}
 
-var add = function(number1, number2) {
-  return number1 + number2;
-};
+var quietFun =function(quiet){
+  if (quiet== 1)
+    return "Alaska"
+  else if (quiet == 2)
+    return "Vancouver BC"
+}
 
-var subtract = function(number1, number2) {
-  return number1 - number2;
-};
+var summerFun =function(summer){
+  if (summer == 1)
+    return "honolulu"
+  else if (summer == 2)
+    return "bahamas"
+}
 
-var multiply = function(number1, number2) {
-  return number1 * number2;
-};
+var timeGoneFun =function(time_gone){
+  if (time_gone == 1)
+    return "Paris"
+  else if (time_gone == 2)
+    return "Tokyo"
+}
 
-var divide = function(number1, number2) {
-  return number1 / number2;
-};
+var budgetFun =function(budget){
+  if (budget == 1)
+    return "Seaside"
+  else if (budget == 2)
+    return "Seattle"
+  else if (budget == 3)
+    return "Chicago"
+  else
+    return "New York"
+}
 
 // Everything below this line is user interface (or front-end) logic:
 $(document).ready(function() {
-  $("form#calculator").submit(function() {
+  $("form#vacation").submit(function() {
     event.preventDefault();
-    var number1 = parseInt($("#input1").val());
-    var number2 = parseInt($("#input2").val());
-    var operator = $("input:radio[name=operator]:checked").val();
-    var result;
-    if (operator === "Trapical") {
-      result = add(number1, number2);
-    } else if (operator === "Desert") {
-      result = subtract(number1, number2);
-    } else if (operator === "multiply") {
-      result = multiply(number1, number2);
-    } else if (operator === "Asia") {
-      result = divide(number1, number2);
-    }
-    $("#output").text(result);
+    var vacation ="";
+    var weather = $("#weather option:selected").val();
+    var quiet = $("#quiet option:selected").val();
+    var summer = $("#summer option:selected").val();
+    var time_gone = $("#time_gone option:selected").val();
+    var budget = $("#budget option:selected").val();
+    console.log("weather = " + weather);
+    console.log("quiet = " + quiet);
+    console.log("summer = " + summer);
+    console.log("time_gone = " + time_gone);
+    console.log("budget = " + budget);
+    vacation = weatherFun(weather);
+      console.log(vacation);
+    vacation = quietFun(quiet);
+      console.log(vacation);
+    vacation = summerFun(summer);
+      console.log(vacation);
+    vacation = timeGoneFun(time_gone);
+      console.log(vacation);
+    vacation = budgetFun(budget);
+    console.log(vacation);
   });
 });
